@@ -1,7 +1,7 @@
 import type { WallpaperTitle } from "./types";
 
 export const WALLPAPER_TITLES: WallpaperTitle[] =[
-    {id:"1", displayName:"Test1"},
-    {id:"2", displayName:"Test2"},
-    {id:"3", displayName:"Test3"}
+    { id: "Nature", displayName: "Nature" },
+    { id: "SciFi", displayName: "Sci-Fi" },
+    { id: "Minimal", displayName: "Minimal" },
 ]
