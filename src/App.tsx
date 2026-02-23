@@ -3,46 +3,26 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { WallpaperTitleText } from "./components/WallpaperTitleText";
 import { WALLPAPER_TITLES } from "./lib/constants";
+import { CONTAINER_ANIMATION_CONFIG } from "./lib/animationConfig";
+import { WALLPAPER_DATA} from "./lib/data";
 import { HideButton } from "./components/HideButton";
 
 function App() {
 
   const [isHidden, setIsHidden] = useState<boolean>(false);
-  const [activeId, setActiveId] = useState<string>("Nature");
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1, // Delay between each title (in seconds)
-      },
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        staggerChildren: 0.05,
-        staggerDirection: -1, // Reverse the order when hiding
-      },
-    },
-  };
+  const [activeId, setActiveId] = useState<string>(WALLPAPER_TITLES[0].id);
+  const activeUrl = WALLPAPER_DATA[activeId];
+  const backgroundImage = activeUrl?.[0]?.src || '';
 
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: 20 },
-  };
   return (
     <>
       <div
-        className="fixed inset-0 -z-10 transition-colors duration-700 ease-in-out"
+        key={backgroundImage}
+        className="fixed inset-0 -z-10 bg-cover bg-center animate-wallpaper"
         style={{
-          // Directly mapping ID to a color for testing
-          backgroundColor:
-            activeId === "Nature"
-              ? "#22c55e"
-              : activeId === "SciFi"
-                ? "#3b82f6"
-                : "#a855f7",
+          // When testing, swap images out for background colour
+          // backgroundImage: `url(${backgroundImage})`,  // REMOVE WHEN WALLPAPERS ARE ADDED
+          backgroundColor:`${backgroundImage}`            // Change to a backup colour for wallpapers
         }}
       />
 
@@ -52,31 +32,32 @@ function App() {
       <div
         className={`relative flex w-screen flex-row items-start justify-start transition-opacity duration-300 `}
       >
-        <div className="flex flex-col items-center justify-center gap-4 text-4xl md:text-5xl m-4">
+        <div className="flex flex-col items-center justify-center m-4">
           <AnimatePresence>
             {!isHidden && (
               <motion.div
                 className="flex flex-col gap-4 text-4xl md:text-6xl text-zinc-600"
-                variants={containerVariants}
-                initial="hidden"
+                variants={CONTAINER_ANIMATION_CONFIG}
+                initial="hidden" 
                 animate="visible"
                 exit="exit"
               >
                 {WALLPAPER_TITLES.map((title) => (
-                  <motion.div key={title.id} variants={itemVariants}>
+
                     <WallpaperTitleText
                       key={title.id}
                       isActive={activeId === title.id}
                       onClick={setActiveId}
                       title={title}
                     />
-                  </motion.div>
+
                 ))}
               </motion.div>
             )}
           </AnimatePresence>
         </div>
       </div>
+
     </>
   );
 }
