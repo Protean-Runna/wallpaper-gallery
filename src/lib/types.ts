@@ -1,12 +1,12 @@
 export type WallpaperTitle = {
-    id: string;
+    readonly id: string;
     displayName: string;
 }
 
 export type WallpaperEntry ={
-    id: string;
-    displayName: string;
-    src: string;
+    readonly id: string;
+    readonly displayName: string;
+    readonly src: string;
 }
 
-export type WallpaperLibrary = Record<string, WallpaperEntry[]>;
+export type WallpaperLibrary = Readonly<Record<string, ReadonlyArray<WallpaperEntry>>>;
