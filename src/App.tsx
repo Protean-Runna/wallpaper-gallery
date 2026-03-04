@@ -21,8 +21,8 @@ function App() {
         className="fixed inset-0 -z-10 bg-cover bg-center animate-wallpaper"
         style={{
           // When testing, swap images out for background colour
-          // backgroundImage: `url(${backgroundImage})`,  // REMOVE WHEN WALLPAPERS ARE ADDED
-          backgroundColor:`${backgroundImage}`            // Change to a backup colour for wallpapers
+          backgroundImage: `url(${backgroundImage})`,  // Wallpapers are here
+          backgroundColor:`#213547`                    // Backup colour in case no wallpapers are loaded
         }}
       />
 
