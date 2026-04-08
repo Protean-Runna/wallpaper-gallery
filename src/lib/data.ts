@@ -8,21 +8,24 @@ export const WALLPAPER_DATA: WallpaperLibrary = {
         {
             id:"D-01",
             displayName: "Digitized",
-            src:Digitized
+            src:Digitized,
+            backupCol: "#22c55e"
         }
     ],
     "Nebula":[
         {
             id:"LN-01",
             displayName: "LCD Nebula",
-            src:Nebula
+            src:Nebula,
+            backupCol: "#3b82f6"
         }
     ],
     "EtherealMall":[
         {
             id:"EM-01",
             displayName: "Ethereal Mall",
-            src:EtherMall
+            src:EtherMall,
+            backupCol: "#a855f7"
         }
     ]
 

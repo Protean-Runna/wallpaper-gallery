@@ -13,7 +13,7 @@ function App() {
   const [activeId, setActiveId] = useState<string>(WALLPAPER_TITLES[0].id);
   const activeUrl = WALLPAPER_DATA[activeId];
   const backgroundImage = activeUrl?.[0]?.src || '';
-
+  const backupColour = activeUrl?.[0]?.backupCol || `#213547`;
   return (
     <>
       <div
@@ -22,7 +22,7 @@ function App() {
         style={{
           // When testing, swap images out for background colour
           backgroundImage: `url(${backgroundImage})`,  // Wallpapers are here
-          backgroundColor:`#213547`                    // Backup colour in case no wallpapers are loaded
+          backgroundColor:backupColour                    // Backup colour in case no wallpapers are loaded
         }}
       />
 
