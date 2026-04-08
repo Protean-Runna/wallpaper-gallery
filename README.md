@@ -1,73 +1,29 @@
-# React + TypeScript + Vite
+## Desktop Wallpaper Gallery
+A Wallpaper gallery to showcase a *very* small selection of desktop wallpapers.
+I built this while learning TypeScript as well as dipping my toes into Tailwind CSS and Framer Motion. 
+Title Animations were partially inspired by @mirayatech's animation work on their anime scene gallery. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technologies
 
-Currently, two official plugins are available:
+  - `React`
+  - `TypeScript`
+  - `Tailwind CSS`
+  - `Vite`
+  - `Framer Motion`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+  - Spring physics via framer motion for a more interactive feel
+  - Each title corresponds with a wallpaper
+  - Option to hide titles to see the wallpaper more clearly
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## The Process
+I wanted to create a nice showcase of some of my own wallpapers. I started with react + TypeScript and worked my way up from there. I've chosen TypeScript rather than JavaScript like my other projects as I wanted to test my knowledge with TypeScript and see if I can make an app without using a tutorial. 
+From there I just experiment with Tailwind CSS and framer motion for a good ui look and feel. It's not super impressive but I am satisified with the results.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Running this project
+If you want to run this project, follow these steps:
+  1. Clone the repository.
+  2. Install dependencies with `npm install`
+  3. Run the development server: `npm run dev`
+  4. Open the local host port ( `http://localhost:5173`) in the browser
