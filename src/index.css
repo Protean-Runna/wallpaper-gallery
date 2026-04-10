@@ -2,8 +2,7 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
+  background-color: #141618;
   color: rgba(255, 255, 255, 0.87);
 
 
@@ -17,15 +16,6 @@ html, body, #root {
   padding: 0;
   min-height: 100vh;
 }
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
@@ -34,27 +24,12 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-
-
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
 .animate-wallpaper {
-  animation: fadeIn 1s ease-in-out forwards;
+  animation: fadeIn 2s ease-in-out forwards;
+  background-color: #141618;
 }
