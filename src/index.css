@@ -30,6 +30,6 @@ body {
 }
 
 .animate-wallpaper {
-  animation: fadeIn 2s ease-in-out forwards;
+  animation: fadeIn 1s ease-in-out forwards;
   background-color: #141618;
 }
