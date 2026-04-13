@@ -13,14 +13,13 @@ function App() {
   const [activeId, setActiveId] = useState<string>(WALLPAPER_TITLES[0].id);
   const activeUrl = WALLPAPER_DATA[activeId];
   const backgroundImage = activeUrl?.[0]?.src || '';
-  const backupColour = activeUrl?.[0]?.backupCol || `#213547`;
+  const backupColour = `#141618`;
   return (
     <>
       <div
         key={backgroundImage}
         className="fixed inset-0 -z-10 bg-cover bg-center animate-wallpaper"
         style={{
-          // When testing, swap images out for background colour
           backgroundImage: `url(${backgroundImage})`,  // Wallpapers are here
           backgroundColor:backupColour                    // Backup colour in case no wallpapers are loaded
         }}
