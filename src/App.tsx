@@ -32,6 +32,12 @@ function App() {
   const backgroundImage = activeUrl?.[0]?.src || "";
   const backupColour = `#0c0d0e`;
 
+  const clickHandler = (id:string) => {
+    if (isTransitioning) return;
+    setActiveId(id);
+
+  };
+
   return (
     <>
       {/**Wallpaper Stuff */}
@@ -74,7 +80,7 @@ function App() {
                   <WallpaperTitleText
                     key={title.id}
                     isActive={activeId === title.id}
-                    onClick={setActiveId}
+                    onClick={() => clickHandler(title.id)}
                     title={title}
                   />
                 ))}
