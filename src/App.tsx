@@ -70,7 +70,7 @@ function App() {
           <AnimatePresence>
             {!isHidden && (
               <motion.div
-                className={`flex flex-col gap-4 text-4xl md:text-6xl text-zinc-600 ${isTransitioning ? 'cursor-wait' : 'cursor-pointer'}`}
+                className={`flex flex-col gap-4 text-4xl md:text-6xl text-zinc-600`}
                 variants={CONTAINER_ANIMATION_CONFIG}
                 initial="hidden"
                 animate="visible"
@@ -80,7 +80,8 @@ function App() {
                   <WallpaperTitleText
                     key={title.id}
                     isActive={activeId === title.id}
-                    onClick={() => clickHandler(title.id)}
+                    isBusy={isTransitioning}
+                    onClick={clickHandler}
                     title={title}
                   />
                 ))}
