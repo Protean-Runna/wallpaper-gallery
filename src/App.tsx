@@ -64,7 +64,7 @@ function App() {
           <AnimatePresence>
             {!isHidden && (
               <motion.div
-                className="flex flex-col gap-4 text-4xl md:text-6xl text-zinc-600"
+                className={`flex flex-col gap-4 text-4xl md:text-6xl text-zinc-600 ${isTransitioning ? 'cursor-wait' : 'cursor-pointer'}`}
                 variants={CONTAINER_ANIMATION_CONFIG}
                 initial="hidden"
                 animate="visible"
